@@ -17,3 +17,46 @@
     <div class="right-button"> > </div>
   </div>
 */
+
+function createCarousel() {
+  // define components
+  const carouselContainer = document.createElement("div");
+  const leftButton = document.createElement("div");
+  const img1 = document.createElement("img");
+  const img2 = document.createElement("img");
+  const img3 = document.createElement("img");
+  const img4 = document.createElement("img");
+  const rightButton = document.createElement("div");
+
+  // nest components
+  carouselContainer.appendChild(leftButton);
+  carouselContainer.appendChild(img1);
+  carouselContainer.appendChild(img2);
+  carouselContainer.appendChild(img3);
+  carouselContainer.appendChild(img4);
+  carouselContainer.appendChild(rightButton);
+
+  // add content
+  leftButton.textContent = "<";
+  img1.src = "./assets/carousel/mountains.jpeg";
+  img2.src = "./assets/carousel/computer.jpeg";
+  img3.src = "./assets/carousel/trees.jpeg";
+  img4.src = "./assets/carousel/turntable.jpeg";
+  rightButton.textContent = ">";
+
+  // set classes
+  carouselContainer.classList.add("carousel");
+  leftButton.classList.add("left-button");
+  rightButton.classList.add("right-button");
+  img1.classList.add("initial");
+
+
+  return carouselContainer
+
+}
+
+const carouselContainer = document.querySelector(".carousel-container");
+const carousel = createCarousel();
+carouselContainer.appendChild(carousel);
+
+console.log(carousel);
